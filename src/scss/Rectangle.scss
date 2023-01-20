@@ -1,0 +1,25 @@
+.Rectangle{
+    margin : 40px 100px;
+    margin-bottom : -50px;
+    overflow : hidden;
+    &__image{
+        background-color : black;
+        border-radius : 25px;
+        height : 223px;
+        img{
+            height : 223px;
+            width : 100%;
+            object-fit: cover;
+            border-radius : 25px;
+            opacity : 0.8;
+        }
+    }
+    h1{
+        color : white;
+        position : relative;
+        top : -150px;
+        text-align : center;
+        font-size : 48px;
+        font-weight : 500;
+    }
+}

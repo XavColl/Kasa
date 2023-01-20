@@ -1,0 +1,94 @@
+.FicheLogement{
+    margin : 40px 100px;
+    .Carrousel{
+        height : 415px;
+        background-color: aquamarine;
+        margin-bottom : 20px;
+    }
+    &__header{
+        display : flex;
+        justify-content: space-between;
+        &__left{
+            h1{
+                font-weight : 500;
+                font-size: 22px;
+            }
+            p{
+                margin-top : 10px;
+            }
+            ul{
+                display : flex;
+                gap : 10px;
+                margin-top : 30px;
+                list-style-type : none;
+                li{
+                    color : #FFFFFF;
+                    background : $main-color;
+                    width : 115px;
+                    padding : 5px 0;
+                    text-align : center;
+                    border-radius : 10px;
+                    font-size : 14px;
+                }
+            }
+        }
+        &__right{
+            .Host{
+                display : flex;
+                img{
+                    border-radius: 200px;
+                    width : 64px;
+                    height : 64px;
+                    object-fit : cover;
+                }
+                p{
+                    margin : 20px;
+                    width : 90px;
+                }
+            }
+            .Stars{
+                margin-top : 20px;
+                text-align: end;
+            }
+        }
+    }
+    &__main{
+        margin-top: 20px;
+        display : flex;
+        gap : 40px;
+        &__part{
+            flex : 1;
+            background : #F7F7F7;
+            height : 250px;
+            border-radius: 10px;
+            .open{
+                h2{
+                    color : #FFFFFFFF;
+                    font-size : 16px;
+                    font-weight : 500;
+                    margin : 10px;
+                }
+                img{
+                    margin : 10px;
+                }
+                border-radius: 10px;;
+                display : flex;
+                background : $main-color;
+                justify-content: space-between;
+                align-items: center;
+            }
+            p{
+                margin : 30px 20px;
+                line-height : 20px;
+            }
+            ul{
+                margin : 30px 20px;
+                line-height : 20px;
+                list-style-type: none;
+            }
+        }
+        &__equipements{
+            flex : 1;
+        }
+    }
+}

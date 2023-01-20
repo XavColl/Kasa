@@ -1,0 +1,13 @@
+.Header{
+    height : 68px;
+    margin : 40px 100px;
+    display : flex;
+    justify-content: space-between;
+    &__nav{
+        align-self : center;
+        a{
+            font-size: 24px;
+            margin : 10px;
+        }
+    }
+}
