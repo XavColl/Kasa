@@ -11,6 +11,8 @@ import Stars from '../components/Stars';
 import arrow from '../assets/images/arrow.png'
 
 const FicheLogement = () => {
+    const [viewDescription,setViewDescription] = useState(true);
+    const [viewEquipments, setViewEquipments] = useState(true);
 
     const { id } = useParams();
 
@@ -25,6 +27,14 @@ const FicheLogement = () => {
         setLodging(getLodgingFromId())
 
     },[])
+
+    const displayDescription = () => {
+        setViewDescription(!viewDescription)
+    }
+
+    const displayEquipments = () => {
+        setViewEquipments(!viewEquipments)
+    }
 
 
 
@@ -48,20 +58,20 @@ const FicheLogement = () => {
                         </div>
                     </div>
                     <main className='FicheLogement__main'>
-                        <div className='FicheLogement__main__part'>
-                            <div className='open'>
+                        <div className='FicheLogement__main__part' style={viewDescription?{'height' : '250px'}:{'height' : '10px'}}>
+                            <div className='open' onClick={() => displayDescription()}>
                                 <h2>Description</h2>
-                                <img src={arrow} alt='flèche'></img>
+                                <img src={arrow} alt='flèche' style={viewDescription?{'transform' : 'rotate(180deg)'}:{'tranform' : 'rotate(0deg)'}}></img>
                             </div>
-                            <p>{lodging.description}</p>
+                            <p style={viewDescription?{'opacity' : '1'}:{'opacity' : '0'}} >{lodging.description}</p>
                         </div>
-                        <div className='FicheLogement__main__part'>
-                            <div className='open'>
+                        <div className='FicheLogement__main__part' style={viewEquipments?{'height' : '250px'}:{'height' : '10px'}} >
+                            <div className='open' onClick={() => displayEquipments()}>
                                 <h2>Equipements</h2>
-                                <img src={arrow} alt='flèche'></img>
+                                <img src={arrow} alt='flèche' style={viewEquipments?{'transform' : 'rotate(180deg)'}:{'tranform' : 'rotate(0deg)'}}></img>
                             </div>
-                            <ul>{lodging.equipments.map(eq => {
-                                return <li>{eq}</li>
+                            <ul style={viewEquipments?{'opacity' : '1'}:{'opacity' : '0'}} >{lodging.equipments.map(eq => {
+                                return <li key={eq} >{eq}</li>
                             })}</ul>
                         </div>
                     </main>
