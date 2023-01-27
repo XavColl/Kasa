@@ -17,9 +17,28 @@
     h1{
         color : white;
         position : relative;
-        top : -150px;
+        top : -143px;
         text-align : center;
         font-size : 48px;
-        font-weight : 500;
+        font-weight : 400;
+    }
+}
+
+@media (max-width : 1000px){
+    .Rectangle{
+        margin : 10px 20px;
+        margin-bottom : -60px;
+        &__image{
+            height : 120px;
+            img{
+                height : 120px;
+            }
+        }
+        h1{
+            text-align : start;
+            font-size : 24px;
+            top : -80px;
+            padding : 0 25px;
+        }
     }
 }

@@ -1,31 +1,45 @@
 .APropos{
-    .InfoBulle{
-        background : #F7F7F7;
-        border-radius: 10px;
-        transition : 0.3s;
-        margin : 20px 200px;
-        .open{
-            cursor: pointer;
-            h2{
-                color : #FFFFFFFF;
-                font-size : 16px;
-                font-weight : 500;
-                margin : 10px;
+    &__content{
+        min-height : 85vh;
+        .InfoBulle{
+            background : #F7F7F7;
+            border-radius: 10px;
+            transition : 0.3s;
+            margin : 20px 200px;
+            .open{
+                cursor: pointer;
+                h2{
+                    color : #FFFFFFFF;
+                    font-size : 16px;
+                    font-weight : 500;
+                    margin : 10px;
+                }
+                img{
+                    margin : 10px;
+                    transition : 0.3s;
+                }
+                border-radius: 10px;;
+                display : flex;
+                background : $main-color;
+                justify-content: space-between;
+                align-items: center;
             }
-            img{
-                margin : 10px;
-                transition : 0.3s;
+            p{
+                transition: 0.3s;
+                padding : 10px 20px;
+                line-height : 20px;
             }
-            border-radius: 10px;;
-            display : flex;
-            background : $main-color;
-            justify-content: space-between;
-            align-items: center;
         }
-        p{
-            transition: 0.3s;
-            margin : 30px 20px;
-            line-height : 20px;
+    }
+}
+
+@media (max-width : 1000px) {
+    
+    .APropos{
+        &__content{
+            .InfoBulle{
+                margin : 20px 20px;
+            }
         }
     }
 }

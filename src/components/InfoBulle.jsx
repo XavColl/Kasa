@@ -3,7 +3,7 @@ import { useState } from 'react';
 import arrow from '../assets/images/arrow.png'
 
 const InfoBulle = ({title, content}) => {
-    const [display,setDisplay] = useState(true)
+    const [display,setDisplay] = useState(false)
 
     const changeDisplay = () => {
         setDisplay(!display)
@@ -15,7 +15,7 @@ const InfoBulle = ({title, content}) => {
                 <h2>{title}</h2>
                 <img src={arrow} alt='flèche' style={display?{'transform' : 'rotate(180deg)'}:{'tranform' : 'rotate(0deg)'}}></img>
             </div>
-            <p style={display?{'opacity' : '1'}:{'opacity' : '0'}}>{content}</p>
+            <p style={display?{'display' : 'block'}:{'display' : 'none'}}>{content}</p>
         </div>
     );
 };

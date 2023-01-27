@@ -2,9 +2,35 @@
     margin : 40px 100px;
     .Carrousel{
         height : 415px;
-        background-color: aquamarine;
         margin-bottom : 20px;
         border-radius: 20px;
+        overflow : hidden;
+        .arrowLeft{
+            position : absolute;
+            top: 47%;
+            left: 10%;
+            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+            cursor: pointer;
+        }
+        .arrowRight{
+            position : absolute;
+            top: 47%;
+            left: 90%;
+            transform: translateX(-50%) translateY(-50%) rotate(90deg);
+            cursor : pointer;
+        }
+        .marker{
+            position : absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color : #FFFFFF
+        }
+        img{
+            width : 100%;
+            object-fit : cover;
+            max-height : 100%;
+        }
     }
     &__header{
         display : flex;
@@ -98,6 +124,29 @@
         }
         &__equipements{
             flex : 1;
+        }
+    }
+}
+
+@media (max-width : 1000px) {
+    .FicheLogement{
+        margin : 40px 20px;
+        .Carrousel{
+            height : 200px;
+        }
+        &__header{
+            flex-direction : column;
+            &__right{
+                display : flex;
+                flex-direction : row-reverse;
+                .Stars{
+                    text-align : start;
+                    img{
+                        height : 15px;
+                        width : 15px;
+                    }
+                }
+            }
         }
     }
 }

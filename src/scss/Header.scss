@@ -11,3 +11,19 @@
         }
     }
 }
+
+@media (max-width : 1000px){
+    .Header{
+        margin : 20px 20px;
+        img{
+            object-fit : cover;
+            height : 40px;
+        }
+        &__nav{
+            a{
+                font-size : 18px;
+                margin : 5px;
+            }
+        }
+    }
+}

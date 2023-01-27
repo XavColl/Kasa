@@ -1,44 +1,48 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Carrousel from '../components/Carrousel';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Db from '../assets/db.json';
 import Host from '../components/Host';
 import Stars from '../components/Stars';
-import arrow from '../assets/images/arrow.png'
+import arrow from '../assets/images/arrow.png';
 
 const FicheLogement = () => {
     const [viewDescription,setViewDescription] = useState(true);
     const [viewEquipments, setViewEquipments] = useState(true);
+    const [idExists,setIdExists] = useState(true);
 
     const { id } = useParams();
 
     const [lodging,setLodging] = useState({});
 
-    useEffect(() => {
-        const getLodgingFromId = () => {
-            const output = Db.find(item => item.id === id);
-            return output;
+    const getLodgingFromId = () => {
+        const output = Db.find(item => item.id === id);
+        if(!output) {
+            setIdExists(false); return false;
         }
+        return output;
+    }
 
-        setLodging(getLodgingFromId())
-
+    useEffect(() => {
+        setLodging(getLodgingFromId());
     },[])
 
+
     const displayDescription = () => {
-        setViewDescription(!viewDescription)
+        setViewDescription(!viewDescription);
     }
 
     const displayEquipments = () => {
-        setViewEquipments(!viewEquipments)
+        setViewEquipments(!viewEquipments);
     }
 
 
 
-    if (lodging?.id) {
+    if (lodging?.tags && idExists) {
             return (
             <>
             <Header />
@@ -79,11 +83,11 @@ const FicheLogement = () => {
                 <Footer />
             </>
         );
-    } else {
+    } else if(!idExists){
         return (
-        <Header />
+            <Navigate to="/404" replace={true}></Navigate>
         )
-    }
+    }else return <></>
 };
 
 export default FicheLogement;
