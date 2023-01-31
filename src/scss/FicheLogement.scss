@@ -5,26 +5,31 @@
         margin-bottom : 20px;
         border-radius: 20px;
         overflow : hidden;
+        position : relative;
         .arrowLeft{
-            position : absolute;
-            top: 47%;
-            left: 10%;
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            white-space: nowrap;
             transform: translateX(-50%) translateY(-50%) rotate(-90deg);
             cursor: pointer;
         }
         .arrowRight{
-            position : absolute;
-            top: 47%;
-            left: 90%;
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            white-space: nowrap;
             transform: translateX(-50%) translateY(-50%) rotate(90deg);
-            cursor : pointer;
+            cursor: pointer;
         }
         .marker{
-            position : absolute;
-            top: 70%;
-            left: 50%;
+            position: absolute;
+            top: 90%;
+            right: 50%;
+            white-space: nowrap;
             transform: translateX(-50%) translateY(-50%);
-            color : #FFFFFF
+            cursor: pointer;
+            color : #FFFFFF;
         }
         img{
             width : 100%;
@@ -137,15 +142,30 @@
         &__header{
             flex-direction : column;
             &__right{
+                margin-top : 20px;
                 display : flex;
                 flex-direction : row-reverse;
+                justify-content: space-between;
                 .Stars{
                     text-align : start;
                     img{
+                        margin-top : 20px;
                         height : 15px;
                         width : 15px;
                     }
                 }
+            }
+        }
+        &__main{
+            min-height : 410px;
+            height : auto;
+            flex-direction  :column;
+            &__part{
+                flex : 0;
+            }
+            .open{
+                height : 35px;
+                margin-bottom : -20px;
             }
         }
     }

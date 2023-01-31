@@ -6,7 +6,7 @@ const Card = ({json}) => {
 
     if(json?.cover) {
         return (
-            <Link to={`/${json.id}`}> 
+            <Link to={`/logement/${json.id}`}> 
                 <figure className='Card'>
                     <img src={json.cover} alt={json.title} />
                     <h2>{json.title}</h2>

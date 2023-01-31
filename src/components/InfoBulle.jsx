@@ -10,7 +10,7 @@ const InfoBulle = ({title, content}) => {
     }
 
     return (
-        <div className='InfoBulle' style={display?{}:{'height' : '50px'}}>
+        <div className='InfoBulle' style={display?{'height':'auto'}:{}}>
             <div className='open' onClick={() => changeDisplay()}>
                 <h2>{title}</h2>
                 <img src={arrow} alt='flèche' style={display?{'transform' : 'rotate(180deg)'}:{'tranform' : 'rotate(0deg)'}}></img>
