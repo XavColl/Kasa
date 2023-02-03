@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Db from '../assets/db.json';
 import arrow from '../assets/images/arrow.png';
+import { getPictures } from '../controllers/carrousel.controller';
 
 const Carrousel = ({id}) => {
 
@@ -23,9 +23,7 @@ const Carrousel = ({id}) => {
     }
 
     useEffect(() => {
-        const item = Db.find(lodge => lodge.id === id);
-        
-        setImages(item.pictures);
+        setImages(getPictures(id));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

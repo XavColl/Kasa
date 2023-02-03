@@ -2,38 +2,25 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
+
 import Carrousel from '../components/Carrousel';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Db from '../assets/db.json';
 import Host from '../components/Host';
 import Stars from '../components/Stars';
 import arrow from '../assets/images/arrow.png';
+import { getLodgingFromId } from '../controllers/ficheLogement.controller';
 
 const FicheLogement = () => {
     const [viewDescription,setViewDescription] = useState(true);
     const [viewEquipments, setViewEquipments] = useState(true);
-    const [idExists,setIdExists] = useState(true);
     const [lodging,setLodging] = useState({});
     const { id } = useParams();  
-
-    const getLodgingFromId = () => {
-        const output = Db.find(item => item.id === id);
-        if(!output) {
-            setIdExists(false);
-            return false;
-        }
-        output.pictures.forEach(item => {
-            const image = new Image();
-            image.src = item
-        } )
-        return output;
-    }
 
 
     useEffect(() => {
 
-        setLodging(getLodgingFromId());
+        setLodging(getLodgingFromId(id));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
@@ -48,7 +35,7 @@ const FicheLogement = () => {
 
 
 
-    if (lodging?.tags && idExists) {
+    if (lodging?.tags) {
             return (
             <>
             <Header />
@@ -89,7 +76,7 @@ const FicheLogement = () => {
                 <Footer />
             </>
         );
-    } else if(!idExists){
+    } else if(lodging === false){
         return (
             <Navigate to="/404" replace={true}></Navigate>
         )

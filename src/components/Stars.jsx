@@ -1,20 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
-import star from '../assets/images/star.svg';
-import nostar from '../assets/images/no-star.svg';
 import { useEffect } from 'react';
+import { displayRating } from '../controllers/stars.controllers';
 
 const Stars = ({rating}) => {
     const [listSrc, setListSrc] = useState([]);
 
     useEffect(() => {
-        let arr = [];
-        for(let i = 0; i<5; i++){
-            if(i<rating){
-                arr.push(star)
-            }else arr.push(nostar)
-        }
-        setListSrc(arr);
+        setListSrc(displayRating(rating));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
 

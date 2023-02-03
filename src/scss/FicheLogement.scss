@@ -17,7 +17,7 @@
         .arrowRight{
             position: absolute;
             top: 50%;
-            right: 40px;
+            right: 0px;
             white-space: nowrap;
             transform: translateX(-50%) translateY(-50%) rotate(90deg);
             cursor: pointer;
@@ -25,7 +25,7 @@
         .marker{
             position: absolute;
             top: 90%;
-            right: 50%;
+            left: 50%;
             white-space: nowrap;
             transform: translateX(-50%) translateY(-50%);
             cursor: pointer;
@@ -33,6 +33,7 @@
         }
         img{
             width : 100%;
+            height : 100%;
             object-fit : cover;
             max-height : 100%;
         }
@@ -146,7 +147,16 @@
                 display : flex;
                 flex-direction : row-reverse;
                 justify-content: space-between;
+                .Host{
+                    img{
+                        margin-top : 5px;
+                        height : 42px;
+                        width : 42px;
+                    }
+                }
                 .Stars{
+                    margin-top : 0;
+                    display : flex;
                     text-align : start;
                     img{
                         margin-top : 20px;
