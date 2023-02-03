@@ -1,17 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { displayRating } from '../controllers/stars.controllers';
 
 const Stars = ({rating}) => {
-    const [listSrc, setListSrc] = useState([]);
-
-    useEffect(() => {
-        setListSrc(displayRating(rating));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
-
-
+    
+    const listSrc = displayRating(rating);
 
     if(listSrc.length>0){
         return (

@@ -1,13 +1,12 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import arrow from '../assets/images/arrow.png';
-import { getPictures } from '../controllers/carrousel.controller';
 
 const Carrousel = ({id}) => {
 
-    const [images,setImages] = useState([]);
     const [currentImage, setCurrentImage] = useState(0);
+    const images = useLoaderData(id).pictures
 
     const nextImage = () => {
         if(currentImage>=images.length-1){
@@ -21,11 +20,6 @@ const Carrousel = ({id}) => {
             setCurrentImage(images.length-1);
         }else setCurrentImage(currentImage - 1);
     }
-
-    useEffect(() => {
-        setImages(getPictures(id));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
 
     if (!images){
         return (

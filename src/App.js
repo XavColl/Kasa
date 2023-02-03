@@ -3,13 +3,13 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider} f
 import Home from './pages/Home'
 import APropos from './pages/APropos'
 import Error from './pages/Error'
-import FicheLogement from './pages/FicheLogement'
+import FicheLogement, {loader as ficheLoader} from './pages/FicheLogement'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route>
         <Route path='/' element={<Home />} errorElement={<Error />}></Route>
         <Route path='/a-propos' element={<APropos />} errorElement={<Error />}></Route>
-        <Route path='/logement/:id' element={<FicheLogement />} errorElement={<Error />}></Route>
+        <Route path='/logement/:id' element={<FicheLogement />} errorElement={<Error />} loader={ficheLoader}></Route>
         <Route path='/404' element={<Error />} errorElement={<Error />}></Route>
         <Route path='*' element={<Error />} errorElement={<Error />}></Route>
   </Route>

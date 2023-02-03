@@ -1,7 +1,6 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useLoaderData, useParams } from 'react-router-dom';
 
 import Carrousel from '../components/Carrousel';
 import Header from '../components/Header';
@@ -14,15 +13,9 @@ import { getLodgingFromId } from '../controllers/ficheLogement.controller';
 const FicheLogement = () => {
     const [viewDescription,setViewDescription] = useState(true);
     const [viewEquipments, setViewEquipments] = useState(true);
-    const [lodging,setLodging] = useState({});
     const { id } = useParams();  
 
-
-    useEffect(() => {
-
-        setLodging(getLodgingFromId(id));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    const lodging = useLoaderData(id)
 
 
     const displayDescription = () => {
@@ -84,3 +77,7 @@ const FicheLogement = () => {
 };
 
 export default FicheLogement;
+
+export const loader = async (id) => {
+    return getLodgingFromId(id);
+}
