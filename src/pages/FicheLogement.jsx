@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Host from '../components/Host';
 import Stars from '../components/Stars';
-import arrow from '../assets/images/arrow.png';
+import arrow from '../assets/images/arrow.webp';
 import { getLodgingFromId } from '../controllers/ficheLogement.controller';
 
 const FicheLogement = () => {
@@ -16,6 +16,11 @@ const FicheLogement = () => {
     const { id } = useParams();  
 
     const lodging = useLoaderData(id)
+
+    lodging.pictures.forEach(img => {
+        const image = new Image();
+        image.src = img
+    })
 
 
     const displayDescription = () => {

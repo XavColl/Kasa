@@ -10,6 +10,7 @@ const Card = ({json}) => {
                 <figure className='Card'>
                     <img src={json.cover} alt={json.title} />
                     <h2>{json.title}</h2>
+                    <div className='cover-black'></div>
                 </figure>
             </Link>
         );

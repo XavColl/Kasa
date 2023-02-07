@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Rectangle from '../components/Rectangle';
-import seaImg from '../assets/images/sea.png';
+import seaImg from '../assets/images/sea.webp';
 import Gallery from '../components/Gallery';
 import Footer from '../components/Footer';
 import { getDb } from '../controllers/home.controller';

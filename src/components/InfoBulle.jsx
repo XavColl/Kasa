@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import arrow from '../assets/images/arrow.png'
+import arrow from '../assets/images/arrow.webp'
 
 const InfoBulle = ({title, content}) => {
     const [display,setDisplay] = useState(false)

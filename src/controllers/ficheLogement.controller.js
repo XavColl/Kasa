@@ -5,10 +5,5 @@ export const getLodgingFromId = async (req) => {
     if(!output) {
         return false;
     }
-    output.pictures.forEach(img => {
-        const image = new Image();
-        image.src = img
-    })
-
     return output;
 }
