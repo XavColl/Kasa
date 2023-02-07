@@ -1,12 +1,11 @@
 import React from 'react';
 import Card from './Card';
-import Db from '../assets/db.json';
 
-const Gallery = () => {
+const Gallery = ({db}) => {
 
     return (
         <div className='Gallery'> 
-            {Db.map(item => {
+            {db.map(item => {
                 return <Card key={item.id} json={item} />
             })}
         </div>

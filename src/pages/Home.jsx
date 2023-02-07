@@ -4,16 +4,25 @@ import Rectangle from '../components/Rectangle';
 import seaImg from '../assets/images/sea.png';
 import Gallery from '../components/Gallery';
 import Footer from '../components/Footer';
+import { getDb } from '../controllers/home.controller';
+import { useLoaderData } from 'react-router-dom';
+
 
 const Home = () => {
+    const db = useLoaderData()
+
     return (
         <div className='Home'> 
             <Header />
             <Rectangle src={seaImg} textContent='Chez vous, partout et ailleurs'/>
-            <Gallery />
+            <Gallery db={db}/>
             <Footer />
         </div>
     );
 };
 
 export default Home;
+
+export const loader = async () => {
+    return getDb()
+}
