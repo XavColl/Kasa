@@ -1,5 +1,7 @@
 import React from 'react';
 
+/** Component containing the informations of the host */
+
 const Host = ({host}) => {
 
     if (host?.name){

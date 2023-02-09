@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '../assets/images/logo-white.webp';
 
+/** Component used on each page except the error, diplayed on the bottom  */
+
 const Footer = () => {
     return (
         <footer className='Footer'>

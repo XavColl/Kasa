@@ -1,5 +1,7 @@
 import React from 'react';
 
+/** Component for the banners in home and "a-propos" pages */
+
 const Rectangle = ({src, textContent}) => {
     if(textContent){
         return (

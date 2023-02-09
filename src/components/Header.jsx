@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
 
-
+/** Component displayed in each page, on the top */
 
     return (
         <header className='Header'>

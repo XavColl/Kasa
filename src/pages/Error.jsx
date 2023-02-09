@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header'
 
+/** Page shown in case there is an error or a wrong url */
+
 const Error = () => {
     return (
         <div className='Error'>

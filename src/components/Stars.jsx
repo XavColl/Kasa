@@ -1,6 +1,9 @@
 import React from 'react';
 import { displayRating } from '../controllers/stars.controllers';
 
+
+/** Component showing stars according to the rating */
+
 const Stars = ({rating}) => {
     
     const listSrc = displayRating(rating);

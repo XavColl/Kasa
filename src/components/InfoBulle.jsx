@@ -2,6 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import arrow from '../assets/images/arrow.webp'
 
+/** Component containing text, that can collapse */
+
 const InfoBulle = ({title, content}) => {
     const [display,setDisplay] = useState(false)
 

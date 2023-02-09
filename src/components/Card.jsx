@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Card = ({json}) => {
+/** Component for each lodging, displayed in gallery */
 
+const Card = ({json}) => {
 
     if(json?.cover) {
         return (

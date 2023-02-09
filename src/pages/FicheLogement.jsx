@@ -10,6 +10,8 @@ import Stars from '../components/Stars';
 import arrow from '../assets/images/arrow.webp';
 import { getLodgingFromId } from '../controllers/ficheLogement.controller';
 
+/** Page reachable through url with apropriate id, displayed on the click on one of the card in gallery */
+
 const FicheLogement = () => {
     const [viewDescription,setViewDescription] = useState(true);
     const [viewEquipments, setViewEquipments] = useState(true);

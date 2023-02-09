@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import { getDb } from '../controllers/home.controller';
 import { useLoaderData } from 'react-router-dom';
 
+/** Home page, containing gallery */
 
 const Home = () => {
     const db = useLoaderData()

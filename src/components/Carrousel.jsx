@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import arrow from '../assets/images/arrow.webp';
 
+/** Component displaying each picture of a given lodging */
+
 const Carrousel = ({id}) => {
 
     const [currentImage, setCurrentImage] = useState(0);

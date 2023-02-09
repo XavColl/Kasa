@@ -5,6 +5,8 @@ import Rectangle from '../components/Rectangle';
 import mountain from '../assets/images/mountain.webp'
 import InfoBulle from '../components/InfoBulle';
 
+/** Page reachable through 'a-propos' url */
+
 const APropos = () => {
     return (
         <div className='APropos'>
