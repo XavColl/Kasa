@@ -24,7 +24,15 @@
     }
 }
 
-@media (max-width : 1000px){
+@media (max-width : 1240px){
+    .Rectangle{
+        h1{
+            font-size : 28px;
+        }
+    }
+}
+
+@media (max-width : 768px){
     .Rectangle{
         margin : 10px 20px;
         margin-bottom : -60px;

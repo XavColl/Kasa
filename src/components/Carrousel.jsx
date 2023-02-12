@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import arrow from '../assets/images/arrow.webp';
+import arrow from '../assets/images/arrow.png';
 
 /** Component displaying each picture of a given lodging */
 

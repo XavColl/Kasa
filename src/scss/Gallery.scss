@@ -37,7 +37,24 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1240px){
+    .Gallery{
+        background-color: #FFFFFF;
+        grid-template-columns: 1fr 1fr;
+        margin : 40px 20px;
+        padding : 0px;
+        a{
+            .Card{
+                margin : 10px;
+                h2{
+                    font-size : 18px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px)  {
     .Gallery{
         background-color: #FFFFFF;
         grid-template-columns: 1fr;
@@ -53,3 +70,4 @@
         }
     }
 }
+
