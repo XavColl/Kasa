@@ -10,7 +10,21 @@ const InfoBulle = ({title, content}) => {
     const changeDisplay = () => {
         setDisplay(!display)
     }
-
+    if(content.length<10){
+        return (
+        <div className='InfoBulle' style={display?{'height':'auto'}:{}}>
+            <div className='open' onClick={() => changeDisplay()}>
+                <h2>{title}</h2>
+                <img src={arrow} alt='flèche' style={display?{'transform' : 'rotate(-90deg)'}:{'tranform' : 'rotate(370deg)'}}></img>
+            </div>
+            <ul style={display?{'display' : 'block'}:{'display' : 'none'}}>
+                {content.map(item => {
+                    return <li key={item}>{item}</li>
+                })}
+            </ul>
+        </div>
+    )
+    }
     return (
         <div className='InfoBulle' style={display?{'height':'auto'}:{}}>
             <div className='open' onClick={() => changeDisplay()}>

@@ -1,7 +1,7 @@
 import star from "../assets/images/star.svg";
 import nostar from "../assets/images/no-star.svg";
 
-/** Function to give the stars to display acording to the rating */
+/** Function to give the stars to display according to the rating */
 
 export const displayRating = (rating) => {
   let arr = [];
