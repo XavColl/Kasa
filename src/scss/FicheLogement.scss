@@ -198,12 +198,8 @@
             min-height : 410px;
             height : auto;
             flex-direction  :column;
-            &__part{
+            .InfoBulle{
                 flex : 0;
-            }
-            .open{
-                height : 35px;
-                margin-bottom : -20px;
             }
         }
     }
